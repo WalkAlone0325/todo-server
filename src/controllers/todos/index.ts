@@ -6,6 +6,7 @@ import Todo from "../../models/todo";
 const getTodos = async (req: Request, res: Response): Promise<void> => {
   try {
     const todos: ITodo[] = await Todo.find();
+
     res.status(200).json({ todos });
   } catch (error) {
     throw error;
@@ -25,6 +26,10 @@ const addTodo = async (req: Request, res: Response): Promise<void> => {
 
     const newTodo: ITodo = await todo.save();
     const allTodos: ITodo[] = await Todo.find();
+
+    res
+      .status(201)
+      .json({ message: "Todo added", todo: newTodo, todos: allTodos });
   } catch (error) {
     throw error;
   }
