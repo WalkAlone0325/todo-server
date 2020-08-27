@@ -1,5 +1,5 @@
 {
-  "name": "todo-react-ts",
+  "name": "todo-server",
   "version": "1.0.0",
   "description": "a react + ts todo",
   "main": "app.ts",
