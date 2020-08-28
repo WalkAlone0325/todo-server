@@ -16,11 +16,11 @@ const getTodos = async (req: Request, res: Response): Promise<void> => {
 // 添加
 const addTodo = async (req: Request, res: Response): Promise<void> => {
   try {
-    const body = req.body as Pick<ITodo, "name" | "desctiption" | "status">;
+    const body = req.body as Pick<ITodo, "name" | "description" | "status">;
 
     const todo: ITodo = new Todo({
       name: body.name,
-      description: body.desctiption,
+      description: body.description,
       status: body.status,
     });
 
